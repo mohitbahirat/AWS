@@ -1,0 +1,24 @@
+sudo yum install -y httpd
+sudo service httpd start
+wget https://wordpress.org/latest.tar.gz
+tar -xzf latest.tar.gz
+cd wordpress
+cp wp-config-sample.php wp-config.php
+vim wp-config.php
+
+
+
+You need to edit two areas of configuration.
+
+First, edit the database configuration by changing the following lines:
+ DB_NAME: “wordpress”
+
+● DB_USER: The name of the user you created in the database in the previous module
+
+● DB_PASSWORD: The password for the user you created in the previous module.
+
+● DB_HOST: The hostname of the database that you found in the previous module.
+
+sudo cp -r wordpress/* /var/www/html/
+sudo service httpd restart
+
